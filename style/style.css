@@ -1,0 +1,72 @@
+
+@font-face {
+    font-family: "Mac's Font";
+    src: url("Test-Mac-Font22.ttf");
+    }
+        html{
+          font-family: "Mac's Font";
+          font-size:2em;
+        }
+
+.svg
+{
+
+}
+
+#parent {
+    position: absolute;
+height: 100%;
+width: 100%;
+}
+
+img {
+    height: 7em;
+    width: 7em;
+}
+
+a {
+    position: relative;
+}
+
+#chisel{
+    left: 1em;
+top: 3em;
+}
+
+#cocktail{
+    left: 7em;
+}
+
+#computer{
+    left: 18em;
+top: 5em;
+}
+
+#email{
+top:1em;
+}
+
+#git-hub{
+    top: 20em;
+left: 7em;
+}
+
+#linked-in{
+    right: 10em;
+top: 22em;
+}
+
+#notebook{
+    top: 16em;
+    left: 9em;
+}
+
+#my_name{
+    font-size: 5em;
+margin: auto 0;
+left: 0;
+right: 0;
+position: relative;
+text-align: center;
+display: block;
+}
