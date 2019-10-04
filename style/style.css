@@ -1,22 +1,17 @@
-
 @font-face {
     font-family: "Mac's Font";
     src: url("Test-Mac-Font22.ttf");
-    }
-        html{
-          font-family: "Mac's Font";
-          font-size:2em;
-        }
-
-.svg
-{
-
 }
+
+html {
+    font-family: "Mac's Font";
+    font-size: 1.5em;
+}
+
+.svg {}
 
 #parent {
     position: absolute;
-height: 100%;
-width: 100%;
 }
 
 img {
@@ -26,47 +21,73 @@ img {
 
 a {
     position: relative;
+    float: left;
+    margin: 3em 4em;
 }
 
-#chisel{
-    left: 1em;
-top: 3em;
+a:hover{
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-#cocktail{
-    left: 7em;
+#chisel {
+    /* left: 1em;
+    top: 3em; */
+    position: relative;
+    top: 3em;
 }
 
-#computer{
-    left: 18em;
-top: 5em;
+#cocktail {
+   
+    position: relative;
+    bottom: 3em;
 }
 
-#email{
-top:1em;
+#computer {
+    /* left: 18em;
+    top: 5em; */
+    position: relative;
+    top: 2em;
 }
 
-#git-hub{
-    top: 20em;
-left: 7em;
+#email {
+    /* top: 1em; */
+    position: relative;
+    bottom: 2em;
 }
 
-#linked-in{
-    right: 10em;
-top: 22em;
+#git-hub {
+    /* top: 20em;
+    left: 7em; */
+    position: relative;
+    top: 3em;
 }
 
-#notebook{
-    top: 16em;
-    left: 9em;
+#linked-in {
+    /* right: 10em;
+    top: 22em; */
+    position: relative;
 }
 
-#my_name{
+#notebook {
+    /* top: 16em;
+    left: 9em; */
+    position: relative;
+    bottom: 4em;
+}
+
+#my_name {
     font-size: 5em;
-margin: auto 0;
-left: 0;
-right: 0;
-position: relative;
-text-align: center;
-display: block;
+    margin: 3em 2em 0 2em;
+    left: 0;
+    right: 0;
+    position: relative;
+    text-align: center;
+    display: block;
 }
+
+.top-row {
+    margin: 2em;
+}
+
+.bottom-row {}
