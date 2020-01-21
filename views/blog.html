@@ -169,7 +169,7 @@
       openpgp.encrypt(options).then(ciphertext => {
         encrypted = ciphertext.data // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'  
         return encrypted
-      }).then(encrypted => {
+      }).then(async encrypted => {
         encryptedLines = encrypted.split('\n')
         htmlEncryptedMessage = ''
         encryptedLines.forEach((line) => {
