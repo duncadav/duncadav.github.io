@@ -188,7 +188,7 @@
                   }
               }
               request.open("POST", "https://cutecryption-backend.herokuapp.com/sendMail", true);
-              request.setRequestHeader("Content-Type", "application/json");
+              request.setRequestHeader("content-type", "application/json");
               request.send(messageRequest);
 
           });
