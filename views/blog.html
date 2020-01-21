@@ -181,15 +181,19 @@
                   'recipient': 'duncadav@gmail.com'
               }
 
-              var request = new XMLHttpRequest();
-              request.onreadystatechange = function () {
-                  if (request.readyState == 4) {
-                      //handle response
-                  }
-              }
-              request.open("POST", "https://cutecryption-backend.herokuapp.com/sendMail", true);
-              request.setRequestHeader("content-type", "application/json");
-              request.send(JSON.stringify(messageRequest));
+                (async () => {
+                  const rawResponse = await fetch("https://cutecryption-backend.herokuapp.com/sendMail", {
+                    method: 'POST',
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(messageRequest)
+                  });
+                  const content = await rawResponse.json();
+
+                  console.log(content);
+                })();
 
           });
       });
