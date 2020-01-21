@@ -3,61 +3,61 @@
   <script type='text/javascript' src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <script type='text/javascript'
-      src='https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.6.2/compat/openpgp.min.js'></script>
+    src='https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.6.2/compat/openpgp.min.js'></script>
 </head>
 <style>
   .form-style-3 {
-      max-width: 450px;
-      font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    max-width: 450px;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   }
 
   .form-style-3 label {
-      display: block;
-      margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
   }
 
   .form-style-3 label>span {
-      float: left;
-      width: 100px;
-      color: #F072A9;
-      font-weight: bold;
-      font-size: 13px;
-      text-shadow: 1px 1px 1px #fff;
+    float: left;
+    width: 100px;
+    color: #F072A9;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px #fff;
   }
 
   .form-style-3 fieldset {
-      border-radius: 10px;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      margin: 0px 0px 10px 0px;
-      border: 1px solid #FFD2D2;
-      padding: 20px;
-      background: #FFF4F4;
-      box-shadow: inset 0px 0px 15px #FFE5E5;
-      -moz-boshadow: inset 0px 0px 15px #FFE5E5;
-      -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+    border: 1px solid #FFD2D2;
+    padding: 20px;
+    background: #FFF4F4;
+    box-shadow: inset 0px 0px 15px #FFE5E5;
+    -moz-boshadow: inset 0px 0px 15px #FFE5E5;
+    -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
   }
 
   .form-style-3 fieldset legend {
-      color: #FFA0C9;
-      border-top: 1px solid #FFD2D2;
-      border-left: 1px solid #FFD2D2;
-      border-right: 1px solid #FFD2D2;
-      border-radius: 5px 5px 0px 0px;
-      -webkit-border-radius: 5px 5px 0px 0px;
-      -moz-border-radius: 5px 5px 0px 0px;
-      background: #FFF4F4;
-      padding: 0px 8px 3px 8px;
-      box-shadow: -0px -1px 2px #F1F1F1;
-      -moz-box-shadow: -0px -1px 2px #F1F1F1;
-      -webkit-box-shadow: -0px -1px 2px #F1F1F1;
-      font-weight: normal;
-      font-size: 12px;
+    color: #FFA0C9;
+    border-top: 1px solid #FFD2D2;
+    border-left: 1px solid #FFD2D2;
+    border-right: 1px solid #FFD2D2;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #FFF4F4;
+    padding: 0px 8px 3px 8px;
+    box-shadow: -0px -1px 2px #F1F1F1;
+    -moz-box-shadow: -0px -1px 2px #F1F1F1;
+    -webkit-box-shadow: -0px -1px 2px #F1F1F1;
+    font-weight: normal;
+    font-size: 12px;
   }
 
   .form-style-3 textarea {
-      width: 250px;
-      height: 100px;
+    width: 250px;
+    height: 100px;
   }
 
   .form-style-3 input[type=text],
@@ -70,142 +70,139 @@
   .form-style-3 input[type=email],
   .form-style-3 select,
   .form-style-3 textarea {
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border: 1px solid #FFC2DC;
-      outline: none;
-      color: #F072A9;
-      padding: 5px 8px 5px 8px;
-      box-shadow: inset 1px 1px 4px #FFD5E7;
-      -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
-      -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
-      background: #FFEFF6;
-      width: 50%;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #FFC2DC;
+    outline: none;
+    color: #F072A9;
+    padding: 5px 8px 5px 8px;
+    box-shadow: inset 1px 1px 4px #FFD5E7;
+    -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+    -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+    background: #FFEFF6;
+    width: 50%;
   }
 
   .form-style-3 input[type=submit],
   .form-style-3 input[type=button] {
-      background: #EB3B88;
-      border: 1px solid #C94A81;
-      padding: 5px 15px 5px 15px;
-      color: #FFCBE2;
-      box-shadow: inset -1px -1px 3px #FF62A7;
-      -moz-box-shadow: inset -1px -1px 3px #FF62A7;
-      -webkit-box-shadow: inset -1px -1px 3px #FF62A7;
-      border-radius: 3px;
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      font-weight: bold;
+    background: #EB3B88;
+    border: 1px solid #C94A81;
+    padding: 5px 15px 5px 15px;
+    color: #FFCBE2;
+    box-shadow: inset -1px -1px 3px #FF62A7;
+    -moz-box-shadow: inset -1px -1px 3px #FF62A7;
+    -webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+    border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-weight: bold;
   }
 </style>
 <script type='text/javascript'>
   function onSubmitHandler() {
-      event.preventDefault();
-      const pubkey = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n"+
-"Version: OpenPGP.js v4.8.0\n"+
-"Comment: https://openpgpjs.org\n"+
-"\n"+
-"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"+
-"=G8PL\n"+
-"-----END PGP PUBLIC KEY BLOCK-----\n"+
-"\n"
-      key = openpgp.key.readArmored(pubkey);
-      key.then(k => {
-          const options =
-          {
-              message: openpgp.message.fromText($('#Body').val()),       // input as Message object 
-              publicKeys: k.keys, // for encryption                    
-          }
-          openpgp.encrypt(options).then(ciphertext => {
-              encrypted = ciphertext.data // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'  
-              return encrypted
-          }).then(encrypted => {
-              encryptedLines = encrypted.split('\n')
-              htmlEncryptedMessage = ''
-              encryptedLines.forEach((line) => {
-                  htmlEncryptedMessage = htmlEncryptedMessage.concat('<br/>', line);
-              });
+    event.preventDefault();
+    const pubkey = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n" +
+      "Version: OpenPGP.js v4.8.0\n" +
+      "Comment: https://openpgpjs.org\n" +
+      "\n" +
+      "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" +
+      "=G8PL\n" +
+      "-----END PGP PUBLIC KEY BLOCK-----\n" +
+      "\n"
+    key = openpgp.key.readArmored(pubkey);
+    key.then(k => {
+      const options =
+      {
+        message: openpgp.message.fromText($('#Body').val()),       // input as Message object 
+        publicKeys: k.keys, // for encryption                    
+      }
+      openpgp.encrypt(options).then(ciphertext => {
+        encrypted = ciphertext.data // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'  
+        return encrypted
+      }).then(encrypted => {
+        encryptedLines = encrypted.split('\n')
+        htmlEncryptedMessage = ''
+        encryptedLines.forEach((line) => {
+          htmlEncryptedMessage = htmlEncryptedMessage.concat('<br/>', line);
+        });
 
-              messageRequest = {
-                  'messageBody': htmlEncryptedMessage,
-                  'recipient': 'duncadav@gmail.com'
-              }
+        messageRequest = {
+          'messageBody': htmlEncryptedMessage,
+          'recipient': 'duncadav@gmail.com'
+        }
+        const rawResponse = await fetch("https://cutecryption-backend.herokuapp.com/sendMail", {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(messageRequest)
+        });
+        const content = await rawResponse.json();
 
-                async () => {
-                  const rawResponse = await fetch("https://cutecryption-backend.herokuapp.com/sendMail", {
-                    method: 'POST',
-                    headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(messageRequest)
-                  });
-                  const content = await rawResponse.json();
+        console.log(content);
 
-                  console.log(content);
-                }
-
-          });
       });
+    });
   }      
 </script>
 <form class='form-style-3'>
   <fieldset>
-      <legend>Contact me securely here!</legend>
-      <div class='template-container'> Body: <textarea id='Body' name='text'
-              style='width:100%; height:100%;'>          </textarea>
-          <!-- Refer to this later to dd reCAPTCHA when deployed -->
-          <div class='g-reCAPTCHA' data-sitekey='6LfmIMwUAAAAABx1gGB1bdvM4C_kU6CV1D4zjWjU'></div><br> <input
-              id='submit' type='submit' value='Submit' onclick='onSubmitHandler()'> </div>
+    <legend>Contact me securely here!</legend>
+    <div class='template-container'> Body: <textarea id='Body' name='text'
+        style='width:100%; height:100%;'>          </textarea>
+      <!-- Refer to this later to dd reCAPTCHA when deployed -->
+      <div class='g-reCAPTCHA' data-sitekey='6LfmIMwUAAAAABx1gGB1bdvM4C_kU6CV1D4zjWjU'></div><br> <input id='submit'
+        type='submit' value='Submit' onclick='onSubmitHandler()'> </div>
   </fieldset>
 </form>
