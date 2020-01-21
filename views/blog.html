@@ -180,10 +180,17 @@
                   'messageBody': htmlEncryptedMessage,
                   'recipient': 'duncadav@gmail.com'
               }
-              
-              $.post("https://cutecryption-backend.herokuapp.com/sendMail", messageRequest, function (data, status) {
-                  alert("Data: " + data + "\nStatus: " + status);
-              });
+
+              var request = new XMLHttpRequest();
+              request.onreadystatechange = function () {
+                  if (request.readyState == 4) {
+                      //handle response
+                  }
+              }
+              request.open("POST", "https://cutecryption-backend.herokuapp.com/sendMail", true);
+              request.setRequestHeader("Content-Type", "application/json");
+              request.send(messageRequest);
+
           });
       });
   }      
