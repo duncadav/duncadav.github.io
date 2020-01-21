@@ -181,7 +181,7 @@
                   'recipient': 'duncadav@gmail.com'
               }
 
-                (async () => {
+                async () => {
                   const rawResponse = await fetch("https://cutecryption-backend.herokuapp.com/sendMail", {
                     method: 'POST',
                     headers: {
@@ -193,7 +193,7 @@
                   const content = await rawResponse.json();
 
                   console.log(content);
-                })();
+                }
 
           });
       });
