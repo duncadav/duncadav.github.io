@@ -182,6 +182,7 @@
         }
         fetch("https://cutecryption-backend.herokuapp.com/sendMail", {
           method: 'POST',
+          mode: 'no-cors',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
