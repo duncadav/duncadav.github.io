@@ -1,1 +1,202 @@
-<p>Nothing here yet :/</p>
+<head> 
+    <script type='text/javascript' src='https://smtpjs.com/v3/smtp.js'></script> 
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.4.1.min.js'></script> 
+    <script src='https://www.google.com/recaptcha/api.js'></script> 
+    <script type='text/javascript' 
+    src='https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.6.2/compat/openpgp.min.js'></script> 
+    </head> 
+    <style> 
+    .blackboard { 
+    position: relative; 
+    max-width: 23em; 
+    margin: 7% auto; 
+    border: tan solid 12px; 
+    border-top: #bda27e solid 12px; 
+    border-left: #b19876 solid 12px; 
+    border-bottom: #c9ad86 solid 12px; 
+    box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782, 0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgba(0, 0, 0, 0.5); 
+    background-image: radial-gradient(circle at left 30%, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3) 80px, rgba(34, 34, 34, 0.5) 100px, rgba(51, 51, 51, 0.5) 160px, rgba(51, 51, 51, 0.5)), linear-gradient(215deg, transparent, transparent 100px, #222 260px, #222 320px, transparent), radial-gradient(circle at right, #111, rgba(51, 51, 51, 1)); 
+    background-color: #333; 
+    } 
+    
+    .blackboard:before { 
+    box-sizing: border-box; 
+    display: block; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    background-image: linear-gradient(175deg, transparent, transparent 40px, rgba(120, 120, 120, 0.1) 100px, rgba(120, 120, 120, 0.1) 110px, transparent 220px, transparent), linear-gradient(200deg, transparent 80%, rgba(50, 50, 50, 0.3)), radial-gradient(ellipse at right bottom, transparent, transparent 200px, rgba(80, 80, 80, 0.1) 260px, rgba(80, 80, 80, 0.1) 320px, transparent 400px, transparent); 
+    border: #2c2c2c solid 2px; 
+    content: 'Send me an encrypted email!'; 
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 1.2em; 
+    color: rgba(238, 238, 238, 0.7); 
+    text-align: center; 
+    padding-top: 20px; 
+    } 
+    
+    .form { 
+    padding: 70px 20px 20px; 
+    } 
+    
+    .shade p { 
+    position: relative; 
+    margin-bottom: 1em; 
+    } 
+    
+    .shade label { 
+    vertical-align: top; 
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 1.6em; 
+    color: rgba(238, 238, 238, 0.7); 
+    } 
+    
+    .shade p:nth-of-type(5)>label { 
+    vertical-align: top; 
+    } 
+    
+    .shade input, 
+    textarea { 
+    vertical-align: middle; 
+    padding-left: 10px; 
+    background: none; 
+    border: none; 
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 1.6em; 
+    color: rgba(238, 238, 238, 0.8); 
+    line-height: .6em; 
+    outline: none; 
+    } 
+    
+    .shade textarea { 
+    height: 120px; 
+    font-size: 1.4em; 
+    line-height: 1em; 
+    resize: none; 
+    } 
+    
+    .shade input[type='submit'] { 
+    cursor: pointer; 
+    color: rgba(238, 238, 238, 0.7); 
+    line-height: 1em; 
+    padding: 0; 
+    } 
+    
+    .shade input[type='submit']:focus { 
+    background: rgba(238, 238, 238, 0.2); 
+    color: rgba(238, 238, 238, 0.2); 
+    } 
+    
+    .shade ::-moz-selection { 
+    background: rgba(238, 238, 238, 0.2); 
+    color: rgba(238, 238, 238, 0.2); 
+    text-shadow: none; 
+    } 
+    
+    .shade ::selection { 
+    background: rgba(238, 238, 238, 0.4); 
+    color: rgba(238, 238, 238, 0.3); 
+    text-shadow: none; 
+    } 
+    </style> 
+    <script type='text/javascript'> 
+    function onSubmitHandler() { 
+    event.preventDefault(); const pubkey = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n"+
+   "Version: OpenPGP.js v4.8.0\n"+
+   "Comment: https://openpgpjs.org\n"+
+   "\n"+
+   "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"+
+   "MA=="+
+   "=s3zq\n"+
+   "-----END PGP PUBLIC KEY BLOCK-----\n"+
+   "\n" 
+    key = openpgp.key.readArmored(pubkey); 
+    key.then(k => { 
+    const options = { 
+    message: openpgp.message.fromText($('#Body').val()),  // input as Message object                         
+    publicKeys: k.keys,    // for                       
+    } 
+    openpgp.encrypt(options).then(ciphertext => { 
+    encrypted = ciphertext.data // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'                 
+    return encrypted 
+    }).then(encrypted => { 
+    encryptedLines = encrypted.split('\n'); 
+    htmlEncryptedMessage = ''; 
+    encryptedLines.forEach((line) => { htmlEncryptedMessage = htmlEncryptedMessage.concat('<br/>', line); }); 
+    
+    messageRequest = { 
+    'messageBody': htmlEncryptedMessage, 
+    'recipient': 'charles.demonstration@gmail.com' 
+    } 
+    fetch('https://cutecryption-backend.herokuapp.com/sendMail', { 
+    method: 'POST', 
+    mode: 'cors', 
+    headers: { 
+    'Accept': 'application/json', 
+    'Content-Type': 'application/json' 
+    }, 
+    body: JSON.stringify(messageRequest) 
+    }).then(response => { 
+    alert(response) 
+    $('#Body').val(''); 
+    }); 
+    }); 
+    }); 
+    }      </script> 
+    <div class='shade'> 
+    <div class='blackboard'> 
+    <div class='form'> 
+    <p> <label>Message: </label> <textarea id='Body'></textarea> </p> 
+    <p class='wipeout'> <input type='submit' value='Send' onclick='onSubmitHandler()' /> </p> 
+    </div> 
+    </div> 
+    </div> 
+   
